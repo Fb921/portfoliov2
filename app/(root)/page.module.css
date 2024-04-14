@@ -204,6 +204,10 @@
         justify-content:center;
     }
     
+    .section1 > div:nth-child(1){
+        z-index:4
+    }
+    
     .section1 h1{
         font-size:30px;
         max-width:300px;

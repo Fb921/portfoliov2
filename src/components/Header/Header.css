@@ -2,7 +2,7 @@
 header{
     display:flex;
     justify-content: space-between;
-    padding:2vw;
+    padding:10px 2vw;
     position: absolute;
     width: 100%;
     z-index:98;
@@ -63,7 +63,7 @@ header .linkedInLogo{
     background:white;
     color:#000000de;
     padding:20px;
-    max-width:60%;
+    max-width:400px;
     min-width:300px;
     border-radius:20px;
     margin-top:60px;
@@ -84,6 +84,9 @@ header .linkedInLogo{
     cursor:pointer;
 }
 @media screen and ( max-width:768px){
+    header{
+        padding:2vw;
+    }
     header *[data-collapse="true"]{
         display:none;
     }

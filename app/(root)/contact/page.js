@@ -3,7 +3,7 @@ import ContactForm from "@/src/components/ContactForm/ContactForm.js"
 import Image from "next/image";
 import Link from "next/link";
 
-import linkedIn from "@/public/LinkedInLogo.png"
+import linkedIn from "@/public/linkedInLogo.png"
 
 export default function Page() {
     return(

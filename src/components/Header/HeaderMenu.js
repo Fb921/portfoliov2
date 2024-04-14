@@ -39,7 +39,7 @@ export default function HeaderMenu(){
                 window.document.children[0].classList.add("unscrollable");
                 window.document.children[0].classList.add("noticeOpened");
                 
-            },3000);
+            },10000);
         }
         if(typeof window !== "undefined" && windowIsDefined){
             if(light) window.document.body.classList.add("light-mode");

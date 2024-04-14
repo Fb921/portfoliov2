@@ -1,0 +1,22 @@
+.contactForm_container .form{
+    filter:blur(6px)
+}
+.contactForm_container .inf_txt{
+    color:white;
+    font-weight:bold;
+    font-size:30px;
+    z-index:4;
+    width:100%;
+    text-align:center;
+    top:25vh;
+    position:absolute;
+}
+
+@media screen and (max-width:768px){
+    .contactForm_container .inf_txt{
+        font-size:23px;
+    }
+    .contactForm_container .form{
+        margin-top:20px;
+    }
+}

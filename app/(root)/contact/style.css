@@ -1,0 +1,107 @@
+
+main h1{
+    font-size:40px;
+    margin-bottom:20px;
+}
+main section{
+    padding-top:120px;
+    min-height:100vh;
+    max-width:1000px;
+}
+
+main section .info_bloc{
+    margin-bottom:30px;
+}
+
+main section .info_title{
+    color:#fff;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+main section .info_title + div{
+    font-size:20px;
+}
+
+main section .flex_container{
+    display:grid;
+    grid-template-columns: 50% 50%;
+}
+
+main section .flex_container > div:nth-child(2){
+    padding-left:30px;
+}
+
+main section form{
+    padding:20px;
+    background:#242424;
+    border-radius:20px;
+}
+
+main section form > div{
+    margin-bottom:30px;
+}
+
+main section form label{
+    display:block;
+    font-size:19px;
+    margin-bottom:5px;
+    color:#fff;
+}
+
+main section form input{
+    height:35px;
+    width:100%;
+    border-radius:5px;
+    border:0;
+    padding:0 10px;
+}
+
+main section form textarea{
+    height:105px;
+    width:100%;
+    border-radius:5px;
+    border:0;
+    padding:10px;
+}
+
+.infos_txt{
+    margin-bottom:20px;
+}
+
+.linLogo{
+    height:20px;
+    width:auto;
+    margin-right:10px;
+}
+.linLink{
+    color:#b22045;
+    text-decoration: underline;
+    font-weight:bold;
+}
+
+@media screen and (max-width:768px){
+    main h1{
+        font-size:25px;
+        margin-top:30px;
+    }
+    main section{
+        padding:20px;
+        padding-top:40px;
+    }
+    
+    main section .flex_container{
+        display:flex;
+        flex-direction:column-reverse;
+    }
+    
+    main section .flex_container > div:nth-child(2){
+        border-left:#b22045 1px solid;
+        margin-bottom:30px;
+    }
+
+    .form_title{
+        color:#fff;
+        font-size:25px;
+    }
+}

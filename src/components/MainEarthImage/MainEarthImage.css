@@ -1,0 +1,29 @@
+.mainEarthImage{
+    position:relative;
+    height:100vh;
+}
+    
+.mainEarthImage img{
+    position:absolute;
+    top:0;
+    height:110vh;
+    object-fit:contain;
+    object-position:left;
+    z-index:1;
+}
+.light-mode .mainEarthImage img{
+    height:100vh;
+}
+
+@media screen and (max-width:768px){
+    .mainEarthImage{
+        position:relative;
+        height:200px;
+    }
+        
+    .mainEarthImage img,.light-mode .mainEarthImage img{
+        height:200px;
+        width:auto;
+        top:57px;
+    }
+}

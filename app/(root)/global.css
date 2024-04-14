@@ -1,0 +1,148 @@
+.staryBg{
+    background-image:url("../../public/starsBackground.png");
+    background-size:400px 400px;
+    background-position:center;
+    width:120vw;
+    height:120vh;
+    z-index:0;
+    position:fixed;
+    top:0;
+    animation-name:movingStaryBgDesktop;
+    animation-duration:400s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.light-mode .staryBg{
+    background-image:url("../../public/CreativeBg.png");
+    /* background-image:url("../../public/staryBgLight9.png"); */
+    background-size:cover;
+    background-position:left;
+    animation-name: none;
+    left:0;
+    top:0;
+
+}
+
+@keyframes movingStaryBgDesktop{
+    0%{transform:rotate(0deg) scale(1.4);width:100vw;height:100vw;top:0;}
+    25%{transform:rotate(90deg) scale(1.6);width:100vw;height:100vw;top:-10vh;}
+    50%{transform:rotate(180deg) scale(1.6);width:100vw;height:100vw;top:0}
+    50%{transform:rotate(180deg) scale(1.6);width:100vw;height:100vw;top:-10vh;}
+    100%{transform:rotate(360deg) scale(1.4);width:100vw;height:100vw;top:0}
+}
+
+section{
+    max-width:75vw;
+    margin:auto;
+}
+
+
+h2{
+    font-size:30px;
+}
+
+/* Light mode style */
+.grayBg{
+    background:#ffffff90;
+}
+.light-mode .grayBg{
+    background:#000000;
+    color:#fff;
+}
+.light-mode .grayBg.tag{
+    background:#ffffff;
+    box-shadow:0 0 5px #00000030;
+    color:#000;
+}
+
+.gray{
+    color:#ffffff90;
+}
+.light-mode .gray{
+    color:#fff;
+}
+/* .light-mode .gray::before{
+    background:#000000 !important;
+} */
+
+/* .light-mode img.invertLight{
+    filter:invert(100%); 
+}*/
+/* .light-mode .staryBg{
+    background:transparent; 
+}*/
+
+
+.darkOnly{
+display:unset;
+}
+
+.lightOnly{
+display:none;
+}
+
+.light-mode .lightOnly{
+display:unset;
+}
+.light-mode .darkOnly{
+    display:none;
+}
+
+
+:root.unscrollable header{
+    position:fixed !important;
+    top:0;
+    left:0;
+}
+:root.unscrollable.noticeOpened main,:root.unscrollable.noticeOpened .staryBg{
+    filter:blur(6px);
+}
+
+@media screen and (max-width:768px){
+    section{
+        max-width:100%;
+    }
+    .staryBg{
+        background-size:300px 300px;
+        background-position:center;
+        width:100vh;
+        height:120vh;
+        z-index:0;
+        position:fixed;
+        top:-10vh;
+        left:-50vw;
+        animation-name:movingStaryBgMobile;
+        animation-duration:100s; 
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+    .stayWhiteLightMobile{
+        color:white !important;
+    }
+}
+
+@keyframes movingStaryBgMobile{
+    0%{transform:rotate(0deg) scale(1.6);width:100vh;height:120vh;top:0;}
+    25%{transform:rotate(90deg) scale(1.6);width:100vh;height:120vh;}
+    50%{transform:rotate(180deg) scale(1.6) ;width:100vh;height:100vh;top:0}
+    50%{transform:rotate(180deg) scale(1.6) ;width:100vh;height:100vh;top:-10vh;}
+    100%{transform:rotate(360deg) scale(1.6);width:100vh;height:100vh;top:0}
+}
+
+
+.txt{
+    color:white;
+}
+.light-mode.txt{
+    color:black;
+}
+  
+:root{
+background:black;
+color:white;
+}
+:root .light-mode{
+background:#ffffff;
+/* color:black; */
+}

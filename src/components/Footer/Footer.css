@@ -1,0 +1,8 @@
+footer{
+    padding-top:90px;
+    text-align:center;
+    font-size:14px;
+}
+footer > div:not(:last-child){
+    margin-bottom:20px;
+}

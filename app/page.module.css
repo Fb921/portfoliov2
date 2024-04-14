@@ -7,6 +7,12 @@
   min-height: 100vh;
 }
 
+.staryBg{
+  background-color:black;
+  width:100vw;
+  height:20vh;
+}
+
 .description {
   display: inherit;
   justify-content: inherit;

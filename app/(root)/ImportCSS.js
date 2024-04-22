@@ -7,9 +7,6 @@ export default function ImportCSS(){
 
     async function importCssFile(){
         const Fuse = (await import('./global.css'));
-
-        // setResults(fuse.search(value))
-
     }
     useEffect(()=>{
         if(typeof window !== "undefined" && !windowIsDefined){

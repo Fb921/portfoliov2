@@ -10,6 +10,7 @@
     object-fit:contain;
     object-position:left;
     z-index:1;
+    width:auto;
 }
 .light-mode .mainEarthImage img{
     height:100vh;

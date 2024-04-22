@@ -39,7 +39,7 @@ import colorPhpLogo from '@/public/colorPhpLogo.png'
 import colorHtmlLogo from '@/public/colorHTML.png'
 import colorCSSLogo from '@/public/colorCss.png'
 
-import femaleSign from "@/public/femaleSign.png"
+import femaleSign from "@/public/femaleSign.png";
 import DynamicGalaxies from '@/src/components/DynamicGalaxies/DynamicGalaxies';
 import ContactPopup from '@/src/components/ContactPopup/ContactPopup.js';
 
@@ -69,7 +69,7 @@ export default function Page(){
                             <Image src={phpLogo3} alt="Logo PHP" className="invertLight"/>
                             <Image src={colorWpLogo} alt="Logo Wordpress" className="invertLight"/>
                         </div>
-                        <div><a className={styles.knowMore_link} href="#allLangagesSection">En savoir plus sur les langages/technologies &#62;</a></div>
+                        <div><a className={styles.knowMore_link + " know_more"} href="#allLangagesSection">En savoir plus sur les langages/technologies &#62;</a></div>
                     </div>            
                 </div>
                 <MainEarthImage/>
@@ -93,14 +93,14 @@ export default function Page(){
                 <div className={styles.whyMe_container}>
                     <h3>Pourquoi moi ?</h3>
                     <p className="max800 gray">{"Développeuse archarnée du travail, mon but est de transformer votre projet en réalité. Pour ce faire, je mettrai à votre disposition l'ensemble de mes compétences et qualités."}</p>
-                    <div className={styles.mini_title}><Image src={loupe} alt="Attentive et minutieuse" className={styles.mini_img + ' invertLight'}/>Attentive et minutieuse</div>
+                    <div className={styles.mini_title + ' mini-title_container'}><Image src={loupe} alt="Attentive et minutieuse" className={styles.mini_img + ' invertLight'}/>Attentive et minutieuse</div>
                     <p className="max800 gray">De nature attentive, je saurai être à votre écoute afin de fidèlement répondre à chacune de vos attentes. Aussi, mon sens du détail me permettra de parfaire le résultat final.</p>
-                    <div className={styles.mini_title}>
+                    <div className={styles.mini_title + ' mini-title_container'}>
                         <Image src={exp} alt="Expérimentée" className={styles.mini_img + ' invertLight'}/>
                         Expérimentée
                     </div>
                     <p className="max800 gray">Mon expérience permettra de répondre à votre demande dans les plus brefs délais et cela tout en fournissant un service de qualité.</p>
-                    <div className={styles.mini_title}><Image src={creative} alt="Créative" className={styles.mini_img + ' invertLight'}/>Créative</div>
+                    <div className={styles.mini_title + ' mini-title_container'}><Image src={creative} alt="Créative" className={styles.mini_img + ' invertLight'}/>Créative</div>
                     <p className="max800 gray">Sur le plan technique, ma créativité me permettra de trouver une solution au plus grand nombre de problèmes et donc de répondre à votre demande du mieux possible.</p>
                 </div>
                 <div id="allLangagesSection">
@@ -147,14 +147,14 @@ export default function Page(){
                     </div>
                     <div>
                         <span className={styles.infos_icon + " grayBg"}>i</span>
-                        Cliquez sur les icônes pour en savoir plus pour chaque langage
+                        <span className="gray">Cliquez sur les icônes pour en savoir plus pour chaque langage</span>
                     </div>
                 </div>
             </section>
 
             <section className={styles.section3} id="servicesSection">
                 <h2>Mes services</h2>
-                <div>Voici les services que je propose.</div>
+                <div className="gray">Voici les services que je propose.</div>
                 <div className={styles.services_container}>
                     <h3 className={styles.service_title}>
                         <span className={styles.serviceLogo_container}>

@@ -39,7 +39,9 @@ h2{font-size:30px}
     box-shadow:0 0 5px #00000030;
     color:#000}
 .gray{color:#ffffff90}
-.light-mode .gray{color:#fff}
+/* .light-mode .gray{color:#fff} */
+.light-mode .gray{color:#000}
+.light-mode .gray::before{background:#000 !important}
 .darkOnly{display:unset}
 .lightOnly{display:none}
 .light-mode .lightOnly{display:unset}
@@ -75,6 +77,28 @@ h2{font-size:30px}
 }
 .txt{color:white}
 .light-mode.txt{color:black}
+
+.light-mode h1{
+    color:#6e002a}
+.light-mode h2,.light-mode h3,.light-mode h4{
+    color:#000}
+.light-mode .mini-title_container{
+    color:#000}
+.light-mode .mini-title_container img{
+    filter:invert(100%);
+}
+.light-mode .invertLight{
+    filter:invert(100%);
+}
+.light-mode .know_more{
+    color:#000;
+}
+.light-mode header{
+    color:#000;
+}
+.light-mode header img.logo{
+    filter:invert(100%);
+}
 :root{
     background:black;
     color:white}

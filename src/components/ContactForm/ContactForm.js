@@ -1,6 +1,7 @@
 import "./ContactForm.css";
 
 export default function ContactForm(){
+    console.log('ContactForm');
     return(
         <div className="contactForm_container">
             <div className="inf_txt">Bientôt dipsonible</div>

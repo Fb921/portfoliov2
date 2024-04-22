@@ -3,10 +3,10 @@ import "./globals.css"
 
 const inter = Raleway({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Portfolio - Bintou Fofana",
-  description: "Bienvenue sur mon portfolio qui je l'espère vous permettra d'en savoir plus àmon sujet.",
-};
+// export const metadata = {
+//   title: "Portfolio - Bintou Fofana",
+//   description: "Bienvenue sur mon portfolio qui je l'espère vous permettra d'en savoir plus àmon sujet.",
+// };
 
 export default function RootLayout({ children }) {
   return (

@@ -6,11 +6,12 @@ import ImageTooltip from '@/src/components/ImageTooltip/ImageTooltip.js';
 
 //Mini presentation logos
 import jsLogo from '@/public/js-logo.png'
-import jsLogo3 from '@/public/jsWhiteLogo.png'
 import reactLogo from '@/public/react-logo.png'
 import nextLogo from '@/public/next-logo.png'
+import whiteNodeLogo from  '@/public/node-logo.png'
 import phpLogo from '@/public/phpLogo.png'
 import wordpressLogo from '@/public/wordpress-logo.png'
+
 
 import nodeLogo from '@/public/nodeLogo.png'
 import gitLogo from '@/public/gitLogo.png'
@@ -23,8 +24,8 @@ import creative from "@/public/creative.png"
 import exp from "@/public/exp.png"
 import whiteHtmlLogo from '@/public/whiteHTML2.png'
 import whiteCSSLogo from '@/public/whiteCss2.png'
-import phpLogo3 from '@/public/phpLogo3.png'
-import nodeLogo3 from '@/public/nodeLogo3.png'
+
+
 
 import colorBootstrapLogo from "@/public/colorBootstrapLogo.png"
 import colorJqueryLogo from "@/public/colorJqueryLogo.png"
@@ -43,12 +44,9 @@ import femaleSign from "@/public/femaleSign.png"
 import DynamicGalaxies from '@/src/components/DynamicGalaxies/DynamicGalaxies';
 import ContactPopup from '@/src/components/ContactPopup/ContactPopup.js';
 
-import ImportCSS from './ImportCSS';
-
 export default function Page(){
     return (
         <main>
-            <ImportCSS/>
             <ContactPopup/>
             <DynamicGalaxies/>
 
@@ -62,18 +60,20 @@ export default function Page(){
                     <div className={styles.miniPresentation}>
                         <div className="gray">Bintou - Développeuse web</div>
                         <div className={styles.shortLogoPresentation}>
-                            <Image src={jsLogo3} alt="Logo JS" className="invertLight"/>
-                            <Image src={reactWhiteLogo} alt="Logo React" className="invertLight"/>
-                            <Image src={colorNextLogo} alt="Logo Next" className="invertLight"/>
-                            <Image src={nodeLogo3} alt="Logo Node" className="invertLight"/>
-                            <Image src={phpLogo3} alt="Logo PHP" className="invertLight"/>
-                            <Image src={colorWpLogo} alt="Logo Wordpress" className="invertLight"/>
+                            <Image src={jsLogo} alt="Logo JS" className="invertLight"/>
+                            <Image src={reactLogo} alt="Logo React" className="invertLight"/>
+                            <Image src={nextLogo} alt="Logo Next" className="invertLight"/>
+                            <Image src={whiteNodeLogo} alt="Logo Node" className="invertLight"/>
+                            <Image src={phpLogo} alt="Logo PHP" className="invertLight"/>
+                            <Image src={wordpressLogo} alt="Logo Wordpress" className="invertLight"/>
                         </div>
                         <div><a className={styles.knowMore_link} href="#allLangagesSection">En savoir plus sur les langages/technologies &#62;</a></div>
                     </div>            
                 </div>
                 <MainEarthImage/>
-            </section>            
+            </section>
+
+            
             <section className={styles.section2} id="quiSuisJeSection">
                 <div>
                     <h2 className={styles.quiSuisJe_title}>Qui suis-je ?</h2>
@@ -88,7 +88,11 @@ export default function Page(){
                         <span className={styles.tag + " grayBg tag"}>Développeuse front-end</span>
                         <span className={styles.tag + " grayBg tag"}>Développeuse back-end</span>
                     </p>
-                    <div><div><a href="#servicesSection" className={styles.default_btn}>Voir mes Services</a></div></div>
+                    <div>
+                        <div>
+                            <a href="#servicesSection" className={styles.default_btn}>Voir mes Services</a>
+                        </div>
+                    </div>
                 </div>
                 <div className={styles.whyMe_container}>
                     <h3>Pourquoi moi ?</h3>
@@ -155,6 +159,7 @@ export default function Page(){
             <section className={styles.section3} id="servicesSection">
                 <h2>Mes services</h2>
                 <div>Voici les services que je propose.</div>
+
                 <div className={styles.services_container}>
                     <h3 className={styles.service_title}>
                         <span className={styles.serviceLogo_container}>

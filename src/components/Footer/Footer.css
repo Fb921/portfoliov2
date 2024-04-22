@@ -3,14 +3,6 @@ footer{
     margin-top:70px;
     text-align:center;
     font-size:14px;
-    background:#00000040;
-}
-footer > div:not(:last-child){
-    margin-bottom:20px;
-}
-
-@media screen and (max-width:768px){
-    footer{
-        font-size:11px;
-    }
-}
+    background:#00000040}
+footer > div:not(:last-child){margin-bottom:20px;}
+@media screen and (max-width:768px){ footer{font-size:11px} }

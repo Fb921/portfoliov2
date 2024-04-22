@@ -1,12 +1,9 @@
 "use client"
-
 import "./ContactPopup.css";
 import Image from "next/image";
 import React, {useRef, useEffect, useState} from "react";
 
 import astronaut from "@/public/astronaut6.png";
-import rocket from "@/public/rocket.png";
-import satelite from "@/public/sateliteCom.png";
 import satelite2 from "@/public/sate.png";
 import tel from "@/public/telImg.png";
 import mail from "@/public/mailImg2.png";
@@ -18,13 +15,11 @@ export default function ContactPopup() {
 
     const [windowIsDefined,setWindowIsDefined] = useState(false);
     const [windowWidth,setWindowWidth] = useState(0);
-
     const modal = useRef(null);
     const modalContainer = useRef(null);
     const astronautImg = useRef(null);
     const clickContainer = useRef(null);
     const formContainer = useRef(null);
-    
 
     const [themeSwitched,setThemeSwitched] = useState("false");
 
@@ -55,7 +50,7 @@ export default function ContactPopup() {
         if(typeof window !== 'undefined' && !windowIsDefined){
             setWindowWidth(window.innerWidth);
             setWindowIsDefined(true);
-            window.onresize = ()=>{
+            window.onresize = async ()=>{
                 setWindowWidth(window.innerWidth);
             }
             window.document.addEventListener("switchtheme",()=>{setThemeSwitched(window.localStorage.getItem("light"));});

@@ -33,6 +33,7 @@ export default function DynamicGalaxies(){
     const [themeSwitched,setThemeSwitched] = useState("false");
     const [isMobile,setIsMobile] = useState(0);
     const [loading,setLoading] = useState(false);
+    const [sizeChanged,setSizeChanged] = useState(false);
     const galaxiesContainer = useRef(null);
     const smallLeftGalaxyMarker = useRef(null);
     const smallLeftBlueGalaxy = useRef(null);
@@ -44,6 +45,14 @@ export default function DynamicGalaxies(){
     const bigLeftPinkGalaxy = useRef(null);
 
     // async function importCssFile(){await import('./DynamicGalaxies.css')}
+
+    function testIsMobile(){
+        console.log("test exec")
+        if(windowIsDefined){
+            if((window.innerWidth > 768) && isMobile){console.log("not mobile");setIsMobile(false)}
+            else if(window.innerWidth<=768 && !isMobile) {setIsMobile(true)}
+        }
+    }
 
     useEffect(()=>{
         if(window !== "undefined" && !windowIsDefined){            
@@ -63,106 +72,112 @@ export default function DynamicGalaxies(){
             else if(window.innerWidth<=768 && !isMobile) {setIsMobile(true)}
 
             window.addEventListener("resize",()=>{
-                if(window.innerWidth>768 && isMobile) setIsMobile(false)
-                else if(window.innerWidth<=768 && !isMobile) {setIsMobile(true)}
+                setSizeChanged(true);
             });
             setLoading(true);
         }else if(loading && windowIsDefined){
-                if(actualScrollPosition > (galaxiesContainer.current.scrollHeight - window.innerHeight)){
-                    
-                    let localRHTS = 0;
-                    let localFixedPoint = 0;
-                    let currentScrollPosition = window.document.children[0].scrollHeight - window.innerHeight - actualScrollPosition;
-        
-                    if(!remainingHeightToScroll) {
-                        localRHTS = window.document.children[0].scrollHeight - window.innerHeight - actualScrollPosition;
-                        setFixedPoint(actualScrollPosition);
-                        setRemainingHeightToScroll(localRHTS);
-                    }else{
-                        localRHTS = remainingHeightToScroll;
-                        localFixedPoint = fixedPoint;
-                    }
-                    
-                    if(currentScrollPosition < remainingHeightToScroll/7){
-                        smallLeftBlueGalaxy.current.style.opacity = 0;
-                        smallLeftPbgGalaxy.current.style.opacity = 0;
-                        smallLeftPinkGalaxy.current.style.opacity = 1;
+            if(actualScrollPosition > (galaxiesContainer.current.scrollHeight - window.innerHeight)){
                 
-                        bigLeftBlueGalaxy.current.style.opacity = 0;
-                        bigLeftPbgGalaxy.current.style.opacity = 0;
-                        bigLeftPinkGalaxy.current.style.opacity = 1;
-                    }else if(currentScrollPosition < (remainingHeightToScroll*(2/7))){
-                        
-                        let l = (currentScrollPosition - (remainingHeightToScroll/7))/(remainingHeightToScroll/7);
-                        
-                        smallLeftBlueGalaxy.current.style.opacity = 0;
-                        smallLeftPbgGalaxy.current.style.opacity = l;
-                        smallLeftPinkGalaxy.current.style.opacity = 1;
-        
-                        bigLeftBlueGalaxy.current.style.opacity = 0;
-                        bigLeftPbgGalaxy.current.style.opacity = l;
-                        bigLeftPinkGalaxy.current.style.opacity = 1;
-                        
-        
-                    }else if(currentScrollPosition < (remainingHeightToScroll*(3/7))){
-        
-                        let l = (currentScrollPosition - ((2*remainingHeightToScroll)/7))/(remainingHeightToScroll/7);
-        
-                        smallLeftBlueGalaxy.current.style.opacity = 0;
-                        smallLeftPbgGalaxy.current.style.opacity = 1;
-                        smallLeftPinkGalaxy.current.style.opacity = 1 - l;
-        
-                        bigLeftBlueGalaxy.current.style.opacity = 0;
-                        bigLeftPbgGalaxy.current.style.opacity = 1;
-                        bigLeftPinkGalaxy.current.style.opacity = 1 - l;
-                    }else if(currentScrollPosition < (remainingHeightToScroll*(4/7))){                
-                        smallLeftBlueGalaxy.current.style.opacity = 0;
-                        smallLeftPbgGalaxy.current.style.opacity = 1;
-                        smallLeftPinkGalaxy.current.style.opacity = 0;
-        
-                        bigLeftBlueGalaxy.current.style.opacity = 0;
-                        bigLeftPbgGalaxy.current.style.opacity = 1;
-                        bigLeftPinkGalaxy.current.style.opacity = 0;
-                    }else if(currentScrollPosition < (remainingHeightToScroll*(5/7))){
-        
-                        let l = (currentScrollPosition - (remainingHeightToScroll*4/7))/(remainingHeightToScroll/7);
-        
-                        smallLeftBlueGalaxy.current.style.opacity = l;
-                        smallLeftPbgGalaxy.current.style.opacity = 1;
-                        smallLeftPinkGalaxy.current.style.opacity = 0;
-                
-                        bigLeftBlueGalaxy.current.style.opacity = l;
-                        bigLeftPbgGalaxy.current.style.opacity = 1;
-                        bigLeftPinkGalaxy.current.style.opacity = 0;
-                    }else if(currentScrollPosition < (remainingHeightToScroll*(6/7))){
-        
-                        let l = (currentScrollPosition - (remainingHeightToScroll*5/7))/(remainingHeightToScroll/7);
-        
-                        smallLeftBlueGalaxy.current.style.opacity = 1;
-                        smallLeftPbgGalaxy.current.style.opacity = 1-l;
-                        smallLeftPinkGalaxy.current.style.opacity = 0;
-                
-                        bigLeftBlueGalaxy.current.style.opacity = 1;
-                        bigLeftPbgGalaxy.current.style.opacity = 1-l;
-                        bigLeftPinkGalaxy.current.style.opacity = 0;
-                    }
-                    else{                
-                        smallLeftBlueGalaxy.current.style.opacity = 1;
-                        smallLeftPbgGalaxy.current.style.opacity = 0;
-                        smallLeftPinkGalaxy.current.style.opacity = 0;
-        
-                        bigLeftBlueGalaxy.current.style.opacity = 1;
-                        bigLeftPbgGalaxy.current.style.opacity = 0;
-                        bigLeftPinkGalaxy.current.style.opacity = 0;
-                    }
-                    //Dans ce cas on fait défiler les galaxies fixes
+                let localRHTS = 0;
+                let localFixedPoint = 0;
+                let currentScrollPosition = window.document.children[0].scrollHeight - window.innerHeight - actualScrollPosition;
+    
+                if(!remainingHeightToScroll) {
+                    localRHTS = window.document.children[0].scrollHeight - window.innerHeight - actualScrollPosition;
+                    setFixedPoint(actualScrollPosition);
+                    setRemainingHeightToScroll(localRHTS);
                 }else{
-                    setRemainingHeightToScroll(0);
-                    if(smallLeftGalaxyMarker.current.getBoundingClientRect().top < (window.innerHeight/-10)) smallLeftBlueGalaxy.current.classList.add("fixed");
-                    else smallLeftBlueGalaxy.current.classList.remove("fixed");
+                    localRHTS = remainingHeightToScroll;
+                    localFixedPoint = fixedPoint;
                 }
+                
+                if(currentScrollPosition < remainingHeightToScroll/7){
+                    smallLeftBlueGalaxy.current.style.opacity = 0;
+                    smallLeftPbgGalaxy.current.style.opacity = 0;
+                    smallLeftPinkGalaxy.current.style.opacity = 1;
+            
+                    bigLeftBlueGalaxy.current.style.opacity = 0;
+                    bigLeftPbgGalaxy.current.style.opacity = 0;
+                    bigLeftPinkGalaxy.current.style.opacity = 1;
+                }else if(currentScrollPosition < (remainingHeightToScroll*(2/7))){
+                    
+                    let l = (currentScrollPosition - (remainingHeightToScroll/7))/(remainingHeightToScroll/7);
+                    
+                    smallLeftBlueGalaxy.current.style.opacity = 0;
+                    smallLeftPbgGalaxy.current.style.opacity = l;
+                    smallLeftPinkGalaxy.current.style.opacity = 1;
+    
+                    bigLeftBlueGalaxy.current.style.opacity = 0;
+                    bigLeftPbgGalaxy.current.style.opacity = l;
+                    bigLeftPinkGalaxy.current.style.opacity = 1;
+                    
+    
+                }else if(currentScrollPosition < (remainingHeightToScroll*(3/7))){
+    
+                    let l = (currentScrollPosition - ((2*remainingHeightToScroll)/7))/(remainingHeightToScroll/7);
+    
+                    smallLeftBlueGalaxy.current.style.opacity = 0;
+                    smallLeftPbgGalaxy.current.style.opacity = 1;
+                    smallLeftPinkGalaxy.current.style.opacity = 1 - l;
+    
+                    bigLeftBlueGalaxy.current.style.opacity = 0;
+                    bigLeftPbgGalaxy.current.style.opacity = 1;
+                    bigLeftPinkGalaxy.current.style.opacity = 1 - l;
+                }else if(currentScrollPosition < (remainingHeightToScroll*(4/7))){                
+                    smallLeftBlueGalaxy.current.style.opacity = 0;
+                    smallLeftPbgGalaxy.current.style.opacity = 1;
+                    smallLeftPinkGalaxy.current.style.opacity = 0;
+    
+                    bigLeftBlueGalaxy.current.style.opacity = 0;
+                    bigLeftPbgGalaxy.current.style.opacity = 1;
+                    bigLeftPinkGalaxy.current.style.opacity = 0;
+                }else if(currentScrollPosition < (remainingHeightToScroll*(5/7))){
+    
+                    let l = (currentScrollPosition - (remainingHeightToScroll*4/7))/(remainingHeightToScroll/7);
+    
+                    smallLeftBlueGalaxy.current.style.opacity = l;
+                    smallLeftPbgGalaxy.current.style.opacity = 1;
+                    smallLeftPinkGalaxy.current.style.opacity = 0;
+            
+                    bigLeftBlueGalaxy.current.style.opacity = l;
+                    bigLeftPbgGalaxy.current.style.opacity = 1;
+                    bigLeftPinkGalaxy.current.style.opacity = 0;
+                }else if(currentScrollPosition < (remainingHeightToScroll*(6/7))){
+    
+                    let l = (currentScrollPosition - (remainingHeightToScroll*5/7))/(remainingHeightToScroll/7);
+    
+                    smallLeftBlueGalaxy.current.style.opacity = 1;
+                    smallLeftPbgGalaxy.current.style.opacity = 1-l;
+                    smallLeftPinkGalaxy.current.style.opacity = 0;
+            
+                    bigLeftBlueGalaxy.current.style.opacity = 1;
+                    bigLeftPbgGalaxy.current.style.opacity = 1-l;
+                    bigLeftPinkGalaxy.current.style.opacity = 0;
+                }
+                else{                
+                    smallLeftBlueGalaxy.current.style.opacity = 1;
+                    smallLeftPbgGalaxy.current.style.opacity = 0;
+                    smallLeftPinkGalaxy.current.style.opacity = 0;
+    
+                    bigLeftBlueGalaxy.current.style.opacity = 1;
+                    bigLeftPbgGalaxy.current.style.opacity = 0;
+                    bigLeftPinkGalaxy.current.style.opacity = 0;
+                }
+                //Dans ce cas on fait défiler les galaxies fixes
+            }else{
+                setRemainingHeightToScroll(0);
+                if(smallLeftGalaxyMarker.current.getBoundingClientRect().top < (window.innerHeight/-10)) smallLeftBlueGalaxy.current.classList.add("fixed");
+                else smallLeftBlueGalaxy.current.classList.remove("fixed");
+            }
         }
-    },[actualScrollPosition,windowIsDefined,loading]);
+
+        if(windowIsDefined && (sizeChanged === true)){
+            if((window.innerWidth > 768) && isMobile) {setIsMobile(false)}
+            else if(window.innerWidth <= 768 && !isMobile) {setIsMobile(true)}
+            setSizeChanged(false);
+        }
+
+    },[actualScrollPosition,windowIsDefined,loading,sizeChanged]);
 
     return (<>
         {windowIsDefined?

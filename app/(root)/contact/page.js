@@ -16,7 +16,7 @@ export default function Page() {
                         <ContactForm/>
                     </div>    
                     <div>
-                        <div className="infos_txt">Un formulaire de contact est en cours de préparation, il permettra de faciliter d'avantage la prise de contact. En attendant, je voici ci-dessous mon mail et mon numéro de téléphone, je reste à votre disposition et vous répondrai dans les plus brefs délais.</div>
+                        <div className="infos_txt">Un formulaire de contact est en cours de préparation, il permettra de faciliter d'avantage la prise de contact. En attendant, vous trouverez ci-dessous mon mail et mon numéro de téléphone. Je reste à votre entière disposition et vous répondrai dans les plus brefs délais.</div>
                         <div className="info_bloc">
                             <div className="info_title">Tèl</div>
                             <div>07 81 90 65 74</div>

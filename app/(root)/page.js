@@ -78,7 +78,7 @@ export default function Page(){
                 <div>
                     <h2 className={styles.quiSuisJe_title}>Qui suis-je ?</h2>
                     <h3 className={styles.quiSuisjeName_container }>
-                        <Image className={styles.femaleSign} src={femaleSign} alt="Female sign"/>
+                        <Image className={styles.femaleSign} src={femaleSign} alt="Image signe féminin"/>
                         <span>Bintou</span>, 24 ans
                     </h3>
                     <p className={styles.tags_container}>
@@ -93,14 +93,14 @@ export default function Page(){
                 <div className={styles.whyMe_container}>
                     <h3>Pourquoi moi ?</h3>
                     <p className="max800 gray">{"Développeuse archarnée du travail, mon but est de transformer votre projet en réalité. Pour ce faire, je mettrai à votre disposition l'ensemble de mes compétences et qualités."}</p>
-                    <div className={styles.mini_title + ' mini-title_container'}><Image src={loupe} alt="Attentive et minutieuse" className={styles.mini_img + ' invertLight'}/>Attentive et minutieuse</div>
+                    <div className={styles.mini_title + ' mini-title_container'}><Image src={loupe} alt="Image loupe : Développeuse attentive et minutieuse" className={styles.mini_img + ' invertLight'}/>Attentive et minutieuse</div>
                     <p className="max800 gray">De nature attentive, je saurai être à votre écoute afin de fidèlement répondre à chacune de vos attentes. Aussi, mon sens du détail me permettra de parfaire le résultat final.</p>
                     <div className={styles.mini_title + ' mini-title_container'}>
-                        <Image src={exp} alt="Expérimentée" className={styles.mini_img + ' invertLight'}/>
+                        <Image src={exp} alt="Image pouce : développeuse expérimentée" className={styles.mini_img + ' invertLight'}/>
                         Expérimentée
                     </div>
                     <p className="max800 gray">Mon expérience permettra de répondre à votre demande dans les plus brefs délais et cela tout en fournissant un service de qualité.</p>
-                    <div className={styles.mini_title + ' mini-title_container'}><Image src={creative} alt="Créative" className={styles.mini_img + ' invertLight'}/>Créative</div>
+                    <div className={styles.mini_title + ' mini-title_container'}><Image src={creative} alt="Image crayon : Développeuse créative" className={styles.mini_img + ' invertLight'}/>Créative</div>
                     <p className="max800 gray">Sur le plan technique, ma créativité me permettra de trouver une solution au plus grand nombre de problèmes et donc de répondre à votre demande du mieux possible.</p>
                 </div>
                 <div id="allLangagesSection">
@@ -116,7 +116,7 @@ export default function Page(){
                             <ImageTooltip image1={colorJSLogo} image2={jsLogo} info="Indispensable pour les développeurs, ce langage permet de rendre dynamique un site web. En effet, il permet non seulement d'interragir avec les visiteurs du site mais également de créer des animations qui rendent l'expérience utilisateur plus agréable." title="JavaScript"/>
                         </div>
                         <div>
-                            <ImageTooltip image1={colorReactLogo} image2={reactLogo} info="React est une bibliothèque<span>*</span> basée sur le langage javaScript. Elle offre une multitude de fonctionnalités et permet aux développeurs de créer des applications web optimales et durables dans le temps." title="React"/>
+                            <ImageTooltip image1={colorReactLogo} image2={reactLogo} info="React est une bibliothèque basée sur le langage javaScript. Elle offre une multitude de fonctionnalités et permet aux développeurs de créer des applications web optimales et durables dans le temps." title="React"/>
                         </div>
                         <div>
                             <ImageTooltip invertLight={true} image1={colorNextLogo} image2={nextLogo} info="Next est un framework* basé sur la bibliothèque* React. Contrairement à React il permet la conception complète d'un site web." title="Next"/>
@@ -127,7 +127,7 @@ export default function Page(){
                     </div>
                     <div className={styles.logo_container}>
                         <div>
-                            <ImageTooltip image1={colorPhpLogo} image2={phpLogo} info="PHP est un langage exécuter par le serveur. Son atoût principal est qu'il permet de récupérer et traiter les données stockées dans la base de données." title="PHP"/>
+                            <ImageTooltip image1={colorPhpLogo} image2={phpLogo} info="PHP est un langage exécuté par les serveurs web (contrairement à JavaScript qui est exécuté sur le navigateur). L'une de ses fonctionnalités la plus intéressante est qu'il permet de récupérer et traiter les données stockées dans la base de données." title="PHP"/>
                         </div>
                         <div>
                             <ImageTooltip invertLight={true} image1={colorWpLogo} image2={wordpressLogo} info="Wordpress est un CMS* permettant de créer un site web facilement sans avoir besoin de coder. Ses nombreuses extensions permettent de couvrir le plus grand nombre de besoins." title="Wordpress"/>
@@ -136,13 +136,13 @@ export default function Page(){
                             <ImageTooltip image1={colorJqueryLogo} image2={jqueryLogo} info="JQuery est une bibliothèque basée sur le langage javaScript, qui permet aux développeur de faciliter l'écriture de leur code. Si bien utilisée, elle permet un gain de temps considérable pour la création d'une application web." title="JQuery"/>
                         </div>
                         <div>
-                            <ImageTooltip image1={colorBootstrapLogo} image2={bootstrapLogo} info="Bootstrap est une bibliothèque HTML, CSS et JavaScript permettant de facilité la mise en style de son site web. Elle permet notamment de créer aisément des design responsive* et de qualité." title="Bootstrap"/>
+                            <ImageTooltip image1={colorBootstrapLogo} image2={bootstrapLogo} info="Bootstrap est une bibliothèque HTML, CSS et JavaScript permettant de faciliter la mise en style de son site web. Elle permet notamment de créer aisément des design responsive* et de qualité." title="Bootstrap"/>
                         </div>
                         <div>
                             <ImageTooltip image1={colorSqlLogo} image2={sqlLogo} info="Langage permettant de questionner la base de données afin d'en extraire les données qui nous intérressent." title="MySQL"/>
                         </div>
                         <div>
-                            <ImageTooltip invertLight={true} image1={colorGitLogo} image2={gitLogo} info="Langage permettant de rendre dynamique un site web." title="Git"/>
+                            <ImageTooltip invertLight={true} image1={colorGitLogo} image2={gitLogo} info="Github est un service permettant d'héberger son code. Il permet de versionner son code afin de garder une trace de chacune de ces étapes." title="Github"/>
                         </div>
                     </div>
                     <div>
@@ -167,36 +167,39 @@ export default function Page(){
                         <div className={styles.servicesDetails_container}>
                             <div>
                                 <h4>Site vitrine</h4>
-                                <p className="gray">Page/section présentant une activité professionnelle (fondateurs, but/objectif, ...)</p>
-                                <p className="gray">Page/section de prise de contact</p>
-                                <p className="gray">Design</p>
+                                <div>C'est un site qui a pour rôle de présenter votre activité professionnelle. Il sera composé des éléments suivants :</div>
+                                <p className="gray">Page ou section présentant votre activité professionnelle (ex : Dirigeant, but/objectif, ...)</p>
+                                <p className="gray">Page ou section permettant une prise de contact</p>
                                 <p className="gray">FAQ (optionnel) </p>
+                                <p className="gray">Blog (optionnel) </p>
                                 <p className="gray">Hébergement (optionnel) </p>
                             </div>
                             <div>
                                 <h4>Blog</h4>
-                                <p className="gray">Configurration du site</p>
-                                <p className="gray">Design</p>
+                                <div>C'est un site qui vous permettra de poster des articles.</div>
+                                <p className="gray">Implémentation des pages du blog</p>
+                                <p className="gray">Configuration du site</p>
                                 <p className="gray">Hébergement (optionnel) </p>
                             </div>
                             <div>
-                                <h4>Débuggage</h4>
-                                <p className="gray">Réglage de bug sur le site</p>
+                                <h4>Débogage</h4>
+                                <p className="gray">Correction de bugs sur le site</p>
                             </div>
                             <div>
                                 <h4>Site e-commerce</h4>
+                                <div>C'est un site qui présente au moins un produit de vente. Dans ce cas je prendrai en charge les éléments suivants :</div>
+                                <p className="gray">Implémentation des pages de vente (Accueil, page produits, page panier, etc)</p>
                                 <p className="gray">Configuration de la boutique</p>
-                                <p className="gray">Design</p>
                                 <p className="gray">Gestion des stocks</p>
                                 <p className="gray">Configuration des mails</p>
                                 <p className="gray">Hébergement (optionnel) </p>
                             </div>
                             <div>
-                                <h4>Formation</h4>
-                                <p className="gray">Apprendre les bases Wordpress</p>
-                                <p className="gray">Apprendre à gérer son site e-commerce avec wordpress</p>
-                                <p className="gray">Apprendre à gérer son site son blog</p>
-                                <p className="gray">Apprendre à héberger son site</p>
+                                <h4>Formation/Assistance</h4>
+                                <p className="gray">Apprentissage des bases Wordpress</p>
+                                <p className="gray">Apprentissage de la gestion de son site e-commerce avec wordpress</p>
+                                <p className="gray">Apprentissage de son blog wordpress</p>
+                                <p className="gray">Apprentissage des notions permettant d'héberger son site web</p>
                             </div>
                         </div>
                     </div>
@@ -213,17 +216,16 @@ export default function Page(){
                         <div className={styles.serviceSideLine}></div>
                         <div className={styles.servicesDetails_container}>
                             <div>
-                                <h4>Site vitrine ultra personnalisé</h4>
-                                <p className="gray">Site vitrine ultra personnalisé et optimisé</p>
-                                <p className="gray">Design</p>
+                                <h4>Site vitrine personnalisé</h4>
+                                <p className="gray">Site vitrine personnalisé et optimisé</p>
                             </div>
                             <div>
-                                <h4>Debbugage</h4>
-                                <p className="gray">Debbugage</p>
+                                <h4>Débogage</h4>
+                                <p className="gray">Correction de bugs</p>
                             </div>
                             <div>
-                                <h4>Implémentation de fonctionnalités spécifiques</h4>
-                                <p className="gray"> Implémentation de fonctionnalités spécifiques</p>
+                                <h4>Implémentation de fonctionnalités</h4>
+                                <p className="gray"> Implémentation de fonctionnalités spécifiques selon votre demande</p>
                             </div>
                         </div>
                     </div>

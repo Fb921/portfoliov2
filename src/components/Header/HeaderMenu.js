@@ -14,18 +14,11 @@ export default function HeaderMenu(){
     const [menuCollapse, setMenuCollapse] = useState(true);
     const [light,setLight] = useState(false );
     const [windowIsDefined, setWindowIsDefined] = useState(false);
-    const [isNoticed,setIsNoticed] = useState(false);
-    // const noticeContainer = useRef(null);
     const [noticeCollapse,setNoticeCollapse] = useState(false);
-    const [scrollBackTo,setScrollBackTo] = useState(0);
-    const [timeoutId,setTimeoutId] = useState(0);
     const stheme = new Event("switchtheme");
 
     function setValue(v){
-
         setLight(v);
-        clearTimeout(timeoutId);
-        
         if(windowIsDefined){
             window.localStorage.setItem("isNoticed","true");
             window.localStorage.setItem("light",v);
@@ -36,18 +29,15 @@ export default function HeaderMenu(){
     useEffect(()=>{
         if(typeof window !== "undefined" && !windowIsDefined){
             setWindowIsDefined(true);
-            let tID = setTimeout(()=>{
-                if(window.localStorage.getItem("isNoticed") == "false"){
+            setTimeout(()=>{
+                if(window.localStorage.getItem("isNoticed") != "true"){
                     //Code pour ajouter une popup pour informer l'utilisateur qu'on peut changer de thème
                     setNoticeCollapse(true);
-    
+
                     window.document.children[0].classList.add("unscrollable");
                     window.document.children[0].classList.add("noticeOpened");
                 }
-                
             },10000);
-
-            setTimeoutId(tID);
         }
         if(typeof window !== "undefined" && windowIsDefined){
             if(light) window.document.body.classList.add("light-mode");
@@ -56,9 +46,9 @@ export default function HeaderMenu(){
     },[light,windowIsDefined]);
 
     function closeNotice(){
-        
         window.document.children[0].classList.remove("unscrollable");
         window.document.children[0].classList.remove("noticeOpened");
+        window.localStorage.setItem("isNoticed","true");
 
         setNoticeCollapse(false);
     }

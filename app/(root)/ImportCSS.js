@@ -10,7 +10,10 @@ export default function ImportCSS(){
     }
     useEffect(()=>{
         if(typeof window !== "undefined" && !windowIsDefined){
-            setWindowIsDefined(true);
+
+            console.log("frist check");
+            console.log(window.localStorage.getItem("isNoticed"));
+            setWindowIsDefined(window.localStorage.getItem("isNoticed"));
             importCssFile();
         }
     },[windowIsDefined])

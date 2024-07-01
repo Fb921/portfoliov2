@@ -135,4 +135,5 @@
     .section2{padding:70px 20px}
     .section3{padding:0px 20px}
     .section2 .logo_container{flex-wrap:wrap}
+    .section2 .miniInfos_container{z-index:2;}
 }

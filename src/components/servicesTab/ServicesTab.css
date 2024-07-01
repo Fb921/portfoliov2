@@ -1,0 +1,32 @@
+.table_container{
+    color:white;
+    text-align: center;
+}
+.table_container table{
+    border-collapse: collapse;
+    width:100%;
+    max-width:100%;
+    background-color:#00000090;
+}
+.table_container tr, .table_container td, .table_container th{
+    border:#fff 1px solid;
+    width:calc(50% / 3);
+    padding:10px;
+    box-sizing:border-box;
+}
+.table_container td:nth-child(1){
+    text-align: left;
+    width:50%;
+}
+.light-mode .table_container{
+    color:#000;
+}
+.light-mode .table_container table{
+    background-color:#ffffff80;
+}
+
+@media screen and (max-width:768px){
+    .table_container table,.table_container thead{
+        font-size:13px;
+    }
+}

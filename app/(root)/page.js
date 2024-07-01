@@ -40,8 +40,11 @@ import colorHtmlLogo from '@/public/colorHTML.png'
 import colorCSSLogo from '@/public/colorCss.png'
 
 import femaleSign from "@/public/femaleSign.png";
+
+//Composants
 import DynamicGalaxies from '@/src/components/DynamicGalaxies/DynamicGalaxies';
 import ContactPopup from '@/src/components/ContactPopup/ContactPopup.js';
+import ServicesTab from '@/src/components/servicesTab/ServicesTab.js';
 
 import ImportCSS from './ImportCSS';
 
@@ -145,7 +148,7 @@ export default function Page(){
                             <ImageTooltip invertLight={true} image1={colorGitLogo} image2={gitLogo} info="Github est un service permettant d'héberger son code. Il permet de versionner son code afin de garder une trace de chacune de ces étapes." title="Github"/>
                         </div>
                     </div>
-                    <div>
+                    <div className={styles.miniInfos_container}>
                         <span className={styles.infos_icon + " grayBg"}>i</span>
                         <span className="gray">Cliquez sur les icônes pour en savoir plus pour chaque langage</span>
                     </div>
@@ -154,82 +157,7 @@ export default function Page(){
 
             <section className={styles.section3} id="servicesSection">
                 <h2>Mes services</h2>
-                <div className="gray">Voici les services que je propose.</div>
-                <div className={styles.services_container}>
-                    <h3 className={styles.service_title}>
-                        <span className={styles.serviceLogo_container}>
-                            <Image src={colorWpLogo} alt="Logo wordpress" className="invertLight"/>
-                        </span>
-                        <span>Wordpress</span>
-                    </h3>
-                    <div className={styles.servicesContent_container}> 
-                        <div className={styles.serviceSideLine}></div>
-                        <div className={styles.servicesDetails_container}>
-                            <div>
-                                <h4>Site vitrine</h4>
-                                <div>C'est un site qui a pour rôle de présenter votre activité professionnelle. Il sera composé des éléments suivants :</div>
-                                <p className="gray">Page ou section présentant votre activité professionnelle (ex : Dirigeant, but/objectif, ...)</p>
-                                <p className="gray">Page ou section permettant une prise de contact</p>
-                                <p className="gray">FAQ (optionnel) </p>
-                                <p className="gray">Blog (optionnel) </p>
-                                <p className="gray">Hébergement (optionnel) </p>
-                            </div>
-                            <div>
-                                <h4>Blog</h4>
-                                <div>C'est un site qui vous permettra de poster des articles.</div>
-                                <p className="gray">Implémentation des pages du blog</p>
-                                <p className="gray">Configuration du site</p>
-                                <p className="gray">Hébergement (optionnel) </p>
-                            </div>
-                            <div>
-                                <h4>Débogage</h4>
-                                <p className="gray">Correction de bugs sur le site</p>
-                            </div>
-                            <div>
-                                <h4>Site e-commerce</h4>
-                                <div>C'est un site qui présente au moins un produit de vente. Dans ce cas je prendrai en charge les éléments suivants :</div>
-                                <p className="gray">Implémentation des pages de vente (Accueil, page produits, page panier, etc)</p>
-                                <p className="gray">Configuration de la boutique</p>
-                                <p className="gray">Gestion des stocks</p>
-                                <p className="gray">Configuration des mails</p>
-                                <p className="gray">Hébergement (optionnel) </p>
-                            </div>
-                            <div>
-                                <h4>Formation/Assistance</h4>
-                                <p className="gray">Apprentissage des bases Wordpress</p>
-                                <p className="gray">Apprentissage de la gestion de son site e-commerce avec wordpress</p>
-                                <p className="gray">Apprentissage de son blog wordpress</p>
-                                <p className="gray">Apprentissage des notions permettant d'héberger son site web</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className={styles.services_container}>
-                    <h3 className={styles.service_title}>
-                        <span className={styles.serviceLogo_container}>
-                            <Image src={reactWhiteLogo} alt="Logo react" className="invertLight"/>
-                        </span>
-                        <span>React</span>
-                    </h3>
-                    <div className={styles.servicesContent_container}>
-                        <div className={styles.serviceSideLine}></div>
-                        <div className={styles.servicesDetails_container}>
-                            <div>
-                                <h4>Site vitrine personnalisé</h4>
-                                <p className="gray">Site vitrine personnalisé et optimisé</p>
-                            </div>
-                            <div>
-                                <h4>Débogage</h4>
-                                <p className="gray">Correction de bugs</p>
-                            </div>
-                            <div>
-                                <h4>Implémentation de fonctionnalités</h4>
-                                <p className="gray"> Implémentation de fonctionnalités spécifiques selon votre demande</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <ServicesTab/>
             </section>
         </main>
     )

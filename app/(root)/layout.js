@@ -6,8 +6,8 @@ import { Raleway } from "next/font/google";
 const inter = Raleway({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Portfolio - Bintou Fofan",
-  description: "Bienvenue sur mon portfolio qui je l'espère vous permettra d'en savoir plus à mon sujet."
+  title: "Portfolio - Bintou Fofana",
+  description: "Bonjour, je suis une développeuse web expérimentée. Je fais des sites vitrines, des portfolios, des sites e-commerces. Je vous assiste aussi pour la maintenance de vos sites web. Je suis expérimentée de 4 ans et cette expérience me permettra de vous offrir un service rapide et efficace."
 };
 
 export default function RootLayout({ children }) {
